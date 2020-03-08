@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Git crib</title>
+</head>
+<body>
+    <h1>Эта страница является шпаргалкой по командам Git</h1>
+    <h2>Вызов справки:</h2>
+    <p><span class="git-command">$ git</span> краткая справка по git.</p>
+    <p><span class="git-command">$ git help </span> далее указывается имя команды. Вызывает справку по конкретной команде.</p>
+    <br>
+
+    <h2>Глобальная настройка Git</h2>
+    <p>используется только при первом запуске git на компьютере.</p>
+    <br>
+    <h2>Создание репозитория:</h2>
+    <p><span class="git-command">$ git init</span> инициирует пустой репозиторий в выбранной папке. В результате выполнения появится
+        подкаталог .git в котором и будут храниться служебные настройки git'а и сам репозиторий./</p>
+    <br>
+    <h2>Добавление файла в отслеживаемые:</h2>
+    <p><span class="git-command">$ git add</span> имя существуещего файла в папке, где создан репозиторий (* добавляет все содержимое папки,
+        либо файлы определенного расширения)</p>
+    <div class="sample">$ git add index.html</div>
+    <div class="sample">$ git add *</div>
+    <div class="sample">$ git add *.js</div>
+    <br>
+    <h2>Проверка статуса файлов в репозитории:</h2>
+    <p><span class="git-command">$ git status</span> позволяет посмотреть, какие файлы в папке отслеживаются, а какие - нет.</p>
+    <br>
+    <h2>Коммит:</h2>
+    <p><span class="git-command">$ git commit -a -m</span> после -m должен быть комментарий в кавычках.</p>
+    <div class="sample">$ git commit -a -m "Initial commit"</div>
+    <br>
+    <h2>Удаление коммита:</h2>
+    <p><span class="git-command">$ git revert</span> после указывается идентификатор коммита. Создает "зеркальный" коммит, который отменяет действие предыдущего.</p>
+    <div class="sample">$ git revert 4ad7e0</div>
+    <br>
+    <h2>Исправление комментария последнего коммита:</h2>
+    <p><span class="git-command">$ git commit --amend -m</span> после -m должен быть новый комментарий к последнему коммиту в кавычках.</p>
+    <div class="sample">$ git commit --amend -m "Roboto Font"</div>
+    <br>
+    <h2>Просмотр истории коммитов:</h2>
+    <p><span class="git-command">$ git log</span> показывает историю всех коммитов с их идентификаторами.</p>
+    <div class="sample">$ git commit -a -m "Initial commit"</div>
+    <br>
+    <h2>Просмотр конкретного коммита:</h2>
+    <p><span class="git-command">$ git show</span> вызывает конкретный коммит по его идентификатору. Можно использовать только первые 6 цифр
+    идентификатора.</p>
+    <div class="sample">$ git show 4ad7e0</div>
+
+    <h2>Взаимодействие с GitHub</h2>
+    <h3>Клонирование репозитория:</h3>
+    <p><span class="git-command">$ git clone</span> после добавляется ссылка на репозиторий GitHub.</p>
+    <div class="sample">$ git clone https://github.com/netology-git/demo.git</div>
+    <br>
+    <h3>Взаимодействие с удаленным репозиторием GitHub:</h3>
+    <p><span class="git-command">$ git remote</span> позволяет управлять удалёнными
+        репозиториями (добавлять, удалять, просматривать). Общепринято, что первый удалённый репозиторий называют <b>origin</b>.
+        Напрмер, <span class="git-command">$ git remote -v</span> позволяет просматривать удаленный репозиторий.</p>
+    <div class="sample">$ git remote -v</div>
+    <div class="sample">origin https://github.com/netology-git/demo.git (fetch)</div>
+    <div class="sample">origin https://github.com/netology-git/demo.git (push)</div>
+    <p><span class="git-command">$ git remote add origin</span> позволяет подключает удаленный репозиторий к локальному</p>.
+    <div class="sample">$ git remote add origin https://github.com/netology-git/demo.git
+        <br>$ git remote -v
+        <br>origin https://github.com/netology-git/demo.git (fetch)
+        <br>origin https://github.com/netology-git/demo.git (push)</div>
+    <p><span class="git-command">$ git push</span> отправляет изменения, сделанные в локальном репозитории на удаленный. <b>Oigin</b> и <b>master</b>
+    необходио указывать только при первой отправке; в дальнейшем (и при наличии только одной ветки) можно указывать просто $ git push.</p>
+    <div class="sample">$ git push -u origin master</div>
+</body>
+</html>
